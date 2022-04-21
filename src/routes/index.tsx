@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from '../pages/Login'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from '../pages/Login';
 
 const Router: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const Router: React.FC = () => {
         <Route path="/" element={<Login />} />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default Router
+export default Router;
