@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   row-gap: 8px;
   font-size: 1.2em;
-  width: inherit;
+  width: 100%;
 `;
 
 export const Input = styled.input`

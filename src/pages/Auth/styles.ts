@@ -38,6 +38,7 @@ export const RightWrapper = styled.div`
   flex-direction: column;
   align-self: center;
   justify-content: space-evenly;
+  align-items: center;
 
   height: 100vh;
 `;
