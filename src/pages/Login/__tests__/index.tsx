@@ -13,19 +13,39 @@ describe('Login page', () => {
     expect(screen.getByRole('form')).toBeInTheDocument();
   });
 
-  it('should redirect to send email page when forgot password link is clicked', async () => {
+  it('should redirect to send email page when forgot password link is clicked', () => {
     const history = createMemoryHistory();
-
+    const initialRoute = '/';
+    const sendEmailRoute = '/send-email';
     render(
-      <Router navigator={history} location={'/'}>
+      <Router navigator={history} location={initialRoute}>
         <Login />
       </Router>,
     );
-    expect(history.location.pathname).toEqual('/');
+    expect(history.location.pathname).toEqual(initialRoute);
 
-    const link = screen.getByRole('link');
+    const link = screen.getByTestId('send-email-link');
     fireEvent.click(link);
 
-    expect(history.location.pathname).toEqual('/send-email');
+    // mudança futura: testar se a página foi renderizada ao invés da mudança de rota
+    expect(history.location.pathname).toEqual(sendEmailRoute);
+  });
+
+  it('should redirect to sign up page correctly', () => {
+    const history = createMemoryHistory();
+    const initialRoute = '/';
+    const sendEmailRoute = '/sign-up';
+    render(
+      <Router navigator={history} location={initialRoute}>
+        <Login />
+      </Router>,
+    );
+    expect(history.location.pathname).toEqual(initialRoute);
+
+    const link = screen.getByTestId('sign-up-link');
+    fireEvent.click(link);
+
+    // mudança futura: testar se a página foi renderizada ao invés da mudança de rota
+    expect(history.location.pathname).toEqual(sendEmailRoute);
   });
 });

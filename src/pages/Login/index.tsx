@@ -9,9 +9,17 @@ const Login: React.FC = () => {
       <form name="login">
         <Input label="Seu e-mail:" type="email" name="email" />
         <Input label="Sua senha:" type="password" name="password" />
-        <Link to="/send-email">Esqueci minha senha</Link>
+        <Link to="/send-email" data-testid="send-email-link">
+          Esqueci minha senha
+        </Link>
         <Button text="Login" />
       </form>
+      <p>
+        Não te uma conta?{' '}
+        <Link to="/sign-up" data-testid="sign-up-link">
+          Cadastre-se, é grátis!
+        </Link>
+      </p>
     </>
   );
 };
