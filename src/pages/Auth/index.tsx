@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/Logo.svg';
 import authImage from '../../assets/auth-image.svg';
+import * as S from './styles';
 
 interface Props {
   children?: React.ReactNode;
@@ -8,20 +9,22 @@ interface Props {
 
 const Auth: React.FC<Props> = ({ children }) => {
   return (
-    <div data-testid="auth">
-      <div>
-        <h1>Crie e gerencie suas tarefas com o TodoApp.</h1>
+    <S.Container data-testid="auth">
+      <S.LeftWrapper>
+        <S.Title>Crie e gerencie suas tarefas com o TodoApp.</S.Title>
         <img
           src={authImage}
           alt="Ilustração de uma pessoa com uma lista de tarefas ao fundo."
         />
-      </div>
-      <div>
-        <img src={logo} alt="logo do To Do App" />
-        <h2>Bem-vindo!</h2>
+      </S.LeftWrapper>
+      <S.RightWrapper>
+        <S.WelcomeWrapper>
+          <img src={logo} alt="logo do To Do App" />
+          <S.WelcomeText>Bem-vindo!</S.WelcomeText>
+        </S.WelcomeWrapper>
         {children}
-      </div>
-    </div>
+      </S.RightWrapper>
+    </S.Container>
   );
 };
 
