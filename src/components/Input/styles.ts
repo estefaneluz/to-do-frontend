@@ -12,5 +12,6 @@ export const Input = styled.input`
   padding: 23px;
   background-color: var(--light-color);
   border: 1px solid var(--secondary-color);
+  border-radius: 4px;
   font-size: 0.9em;
 `;

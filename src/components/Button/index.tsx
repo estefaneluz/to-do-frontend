@@ -1,16 +1,18 @@
 import React from 'react';
+import { Button as StyledButton } from './styles';
 
 export interface Props {
   text: string;
   type?: 'submit' | 'reset';
   onClick?: () => void;
+  width?: string;
 }
 
-const Button: React.FC<Props> = ({ text, type, onClick }) => {
+const Button: React.FC<Props> = ({ text, type, onClick, ...rest }) => {
   return (
-    <button type={type || 'button'} onClick={onClick}>
+    <StyledButton type={type || 'button'} onClick={onClick} {...rest}>
       {text}
-    </button>
+    </StyledButton>
   );
 };
 
