@@ -1,5 +1,6 @@
 import React from 'react';
 import { Status } from '../../../interfaces/status';
+import * as S from './styles';
 
 interface Props {
   title: string;
@@ -9,16 +10,16 @@ interface Props {
 
 const Card: React.FC<Props> = ({ title, selected, options }) => {
   return (
-    <div data-testid="card">
+    <S.Card data-testid="card">
       <h3>{title}</h3>
-      <select defaultValue={selected.id}>
+      <S.Status defaultValue={selected.id}>
         {options.map((op) => (
           <option value={op.id} key={op.id}>
             {op.status}
           </option>
         ))}
-      </select>
-    </div>
+      </S.Status>
+    </S.Card>
   );
 };
 
