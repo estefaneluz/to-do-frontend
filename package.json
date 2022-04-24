@@ -59,6 +59,10 @@
   "jest": {
     "coveragePathIgnorePatterns": [
       "src/routes/*.tsx"
+    ],
+    "collectCoverageFrom": [
+      "src/pages/**/*.tsx",
+      "src/components/**/*.tsx"
     ]
   }
 }

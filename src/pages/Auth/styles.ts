@@ -61,3 +61,24 @@ export const WelcomeText = styled.h2`
   font-size: 2em;
   font-weight: 400;
 `;
+
+export const Redirect = styled.p`
+  color: var(--text-color);
+  text-align: center;
+
+  a {
+    color: var(--text-color);
+    font-weight: 700;
+    text-decoration: none;
+  }
+`;
+
+export const Form = styled.form`
+  width: 90%;
+  max-width: 512px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+`;
